@@ -1,0 +1,35 @@
+<!DOCTYPE>
+<html>
+ <head>Break and Continue Lesson</head>
+		<body>
+			<script>
+					var random = Math.floor((Math.random()*50)+1);
+					while (random % 2 == 0) {
+							random = Math.floor((Math.random()*50)+1);
+						}
+
+					console.log('Random number is odd: ' + random);
+							
+					for (var i = 1; i < 50; i += 2) {
+						if (i == random) {
+							console.log('Skipping number: ' + i);
+							continue;
+						}
+							console.log('Here is an odd number: ' + i);
+					}
+  </script>
+ </body>
+</html>
+					
+	
+							
+								
+	
+
+
+
+							
+					
+
+
+
