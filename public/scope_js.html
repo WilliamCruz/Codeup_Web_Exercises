@@ -1,0 +1,27 @@
+<!DOCTYPE>
+<head>
+	<title>Variable Scope</title>
+</head>
+<body>
+	<script>
+
+		(function () {
+		var myNameIs = "William.";
+		alert(myNameIs);
+		} ());
+			
+		
+
+	</script>
+	<script>
+
+		(function (number) {
+		var random = Math.floor((Math.random()*100)+1);
+		var message = (number % 2 == 0) ? number + ' is even.' : number + ' is odd.';
+		alert(random);
+		} ());
+	
+		
+			
+	</script>
+</body>
