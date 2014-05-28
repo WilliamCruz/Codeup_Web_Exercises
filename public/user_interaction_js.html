@@ -1,0 +1,19 @@
+<!DOCTYPE>
+ <html>
+  <head>Dialog Functions for User Interaction</head>
+   <body>
+    <script>
+    
+    	var fullName = prompt('What is your full name?');
+    	while (fullName == '' || fullName == null) {
+    		fullName = prompt('Please enter your full name to continue.');
+    	} alert('Welcome ' + fullName);
+
+    	var response = confirm(fullName + ", Do you like pizza?");
+    		var message = (response == true ? "Awesome! I like Pizza too." : "Burm.");
+    		alert(message);
+
+    </script>
+
+   </body>
+
