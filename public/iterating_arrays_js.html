@@ -1,0 +1,23 @@
+<!DOCTYPE>
+<html>
+	<head>Arrays</head>
+<body>
+	<h1>Iterating Arrays Exercise</h1>
+
+	<script>
+
+		var names = ['Lincoln', 'Leslie', 'Gary', 'Valerie'];
+		for (var i = 0; i < names.length; i++) {
+			console.log('The array includes the following people: ' + 'i  ' +  names[i]);
+		}
+
+	</script>
+	<script>
+
+		var names = ['Lincoln', 'Leslie', 'Gary', 'Valerie'];
+		names.forEach(function(element, index, array) {
+			console.log('The names at index ' + index + ' is: ' + element);
+		});
+
+	</script>
+</body>
