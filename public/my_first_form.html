@@ -1,10 +1,11 @@
-<!DCTYPE>
+<!DOCTYPE>
 <html>
 <head>
 	<meta charset="utf-8">
 	<title>My First HTML Form</title>
 </head>
 	<body>
+	<h2>User Login</h2>
 		<form method="POST" action="http://requestb.in/">
 	    	<p>
 	        	<label for="username">Username</label>
@@ -18,6 +19,30 @@
 	        	<button type="submit">Login</button>
 	    	</p>
 		</form>
+		<h2>Compose Email</h2>
+	<form method="POST" action="http://requestb.in/skj98bsk">
+		<p> 
+			<label for="text">Text:</label>
+			<input id="text" name="text" type="text" placeholder="Text">
+		</p>
+		<p>
+			<label for="to">To:</label>
+		 	<input id="to" name="to" type="text" placeholder="To">
+		</p>
+		<p>
+			<label for="from">From:</label>
+		 	<input id="from" name="from" type="text" placeholder="From">
+		</p>
+		<p>
+			<label for="subject">Subject:</label>
+		 	<input id="subject" name="subject" type="text" placeholder="Subject">
+		</p>
+		<p>
+			<label for="body">eMail Body</label>
+			<textarea id="email_body" name="email_body" rows="5" cols="40">Content Here</textarea>
+			<button type="submit">Submit</button>
+		</p>
+	</form>
 	</body>
 </html>
 
