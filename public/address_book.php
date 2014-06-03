@@ -10,6 +10,23 @@ $address_book = [
     ['LucasArts', 'P.O. Box 29901', 'San Francisco', 'CA', '94129-0901']
 ];
 
+
+$filename = 'address_book.csv';
+
+$handle = fopen($filename, 'r');
+
+$address_book = [];
+
+while(!feof($handle)) {
+	$row = fgetcsv($handle);
+	if (is_array($row)) {
+  	$address_book[] = $row;
+		
+	}
+}
+fclose($handle);
+
+
 $new_address =[];
 $filename = "address_book.csv";
 
@@ -52,7 +69,7 @@ if (!empty($_POST)) {
 <body>
 	<div class="container">
 		<h1>Address Book</h1>
-		<table style=width:700px; border:1px>
+		<table style="width:700px"; border='1'>
 			<tr>
 				<th>Name</th>
 				<th>Address</th>
