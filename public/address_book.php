@@ -4,61 +4,80 @@
 //Using CSV Files: Writing CSV data
 
 
-$address_book = [
-    ['The White House', '1600 Pennsylvania Avenue NW', 'Washington', 'DC', '20500'],
-    ['Marvel Comics', 'P.O. Box 1527', 'Long Island City', 'NY', '11101'],
-    ['LucasArts', 'P.O. Box 29901', 'San Francisco', 'CA', '94129-0901']
-];
 
+class AddressDataStore {
 
-$filename = 'address_book.csv';
+    public $filename = 'address_book.csv';
 
-$handle = fopen($filename, 'r');
+    function read_address_book()
+    {
+        $address_book = [];
+		$handle = fopen($this->filename, 'r');
+		while(!feof($handle)) {
+			$row = fgetcsv($handle);
+			if (is_array($row)) {
+		  	$address_book[] = $row;
+			}
+		}
+		fclose($handle);
+		return $address_book;
+    }
+
+    function write_address_book($addresses_array) 
+    {
+        
+        // Code to write $addresses_array to file $this->filename
+    }
+
+}
+
 
 $address_book = [];
+//Reading csv data
+$filename = 'address_book.csv';
 
-while(!feof($handle)) {
-	$row = fgetcsv($handle);
-	if (is_array($row)) {
-  	$address_book[] = $row;
-		
+function read_csv($filename) {
+	$address_book = [];
+	$handle = fopen($filename, 'r');
+	while(!feof($handle)) {
+		$row = fgetcsv($handle);
+		if (is_array($row)) {
+	  	$address_book[] = $row;
+		}
 	}
-}
-fclose($handle);
-
-
-$new_address =[];
+	fclose($handle);
+	return $address_book;
+}		
+//writing to csv data
+$new_contact=[];
 $filename = "address_book.csv";
+$address_book = read_csv($filename);
 
 function write_csv($bigArray, $filename) {
 	if (is_writable($filename)) {
-		$handle = fopen($filename, 'w') ;
-		foreach($bigArray as $fields) {
-			fputcsv($handle, $fields);
+		$handle = fopen($filename, 'w');
+		foreach($bigArray as $new_contact) {
+			fputcsv($handle, $new_contact);
 		}
 		fclose($handle);
 	}
 }
-
 if (!empty($_POST)) {
-	$errors = [];
-	$new_contact['name'] = $_POST['name'];
-	$new_contact['address'] = $_POST['address'];
-	$new_contact['city'] = $_POST['city'];
-	$new_contact['state'] = $_POST['state'];
-	$new_contact['zip'] = $_POST['zip'];
-	$new_contact['phone'] = $_POST['phone'];
+	$new_contact = $_POST;
  	
  	foreach($new_contact as $key => $value) {
  		if (empty($value)) {
  			$errors[] = $key . ' is empty. Please enter valid data.';
  		}
  	}
-
-	array_push($address_book, $new_contact);
+	if (empty($errors)) {
+		$address_book[] = $new_contact;
+		write_csv($address_book, $filename);
+		$address_book = read_csv($filename);
+	} else {
+		
+	}
 }
-	write_csv($address_book, $filename);
-	//var_dump($address_book);
 ?>
 
 <!DOCTYPE>
@@ -85,8 +104,8 @@ if (!empty($_POST)) {
 			</tr>
 	<? endforeach?>
 	</table>
+	<br>
 		<?
-		
 		if (!empty($errors)) {
 			foreach($errors as $error) {
 				echo ucfirst($error) . "<br>";
@@ -117,7 +136,7 @@ if (!empty($_POST)) {
 			</p>
 			<p>
 				<label for="Phone">Phone:</label>
-				<input id="Phone" name="phone" type="text" placeholder="Enter Phone Number">
+				<input id="Phone" name="phone" type="text" placeholder="Optional">
 			</p>
 			<p>	
 				<button type="Submit">Enter</button>
