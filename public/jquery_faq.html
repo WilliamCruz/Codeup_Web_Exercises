@@ -17,6 +17,17 @@
                 event.preventDefault();
                 $('dd').toggleClass('invisible');
             });
+			 
+			$('ul').each(function() {
+				$(this).children().first().css('font-weight', 'bold');
+
+
+			})
+			
+			// .children().first().css('font-wight' 'bold');
+		 		$('li').click(function() {
+		 			$(this).addClass('invisible')
+		 	});
         });
 	</script>
 
@@ -44,5 +55,33 @@
 			<dt>Pinnacles National Park</dt>
 				<dd class="invisible">California Condors</dd>
 		</dl>
+
+	<a href="#" id="Parks">Click to make list headings.</a>
+	<h3>Arches</h3>
+		<ul>
+			<li>Arches has a landscape of contrasting colors, landforms and textures unlike any other in the world. </li>
+			<li>The park has over 2,000 natural stone arches.</li>
+			<li>In addition to hundreds of soaring pinnacles,</li>
+			<li>massive fins and giant balanced rocks.</li>
+		</ul>
+	<h3>Badlands</h3>
+		<ul>
+			<li>These striking geologic deposits contain one of the world’s richest fossil beds.</li>
+			<li>Ancient mammals such as the rhino, horse, and saber-toothed cat once roamed here.</li>
+			<li>The park’s 244,000 acres protect an expanse of mixed-grass prairie where bison, bighorn sheep, prairie dogs, and black-footed ferrets live today.</li>
+			<li>Lovely dark night skies are a Badlands highlight.</li>
+		</ul>
+	<h3>Carlsbad Caverns</h3>
+		<ul>
+			<li>An experience that is high energy, educational, fun and family oriented.</li>
+			<li>Simply experience nature on the original Discovery Tour.</li>
+			<li>One of the states top attractions in Texas.</li>
+			<li>The cavern formed by an underground "river" moving slowly through cracks and pores within the limestone.</li>
+		</ul>
+
+		<!-- Create jQuery code that adds the invisible class on the parent ul of any li that is clicked. -->
+ 
 </body>
 </html>
+		
+
