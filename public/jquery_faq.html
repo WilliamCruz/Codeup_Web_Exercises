@@ -15,7 +15,10 @@
 		$('document').ready(function() {
             $('#btn').click(function(event) {
                 event.preventDefault();
-                $('dd').toggleClass('invisible');
+                
+                $('#btn').click(function () {
+                	$('dd').toggle("slow");
+                });
             });
 			 
 			$('ul').each(function() {
@@ -26,7 +29,7 @@
 			
 			// .children().first().css('font-wight' 'bold');
 		 		$('li').click(function() {
-		 			$(this).addClass('invisible')
+		 			$(this).hide();
 		 	});
         });
 	</script>
@@ -56,7 +59,7 @@
 				<dd class="invisible">California Condors</dd>
 		</dl>
 
-	<a href="#" id="Parks">Click to make list headings.</a>
+	<a href="#" id="Parks">Click facts to make them invisible.</a>
 	<h3>Arches</h3>
 		<ul>
 			<li>Arches has a landscape of contrasting colors, landforms and textures unlike any other in the world. </li>
