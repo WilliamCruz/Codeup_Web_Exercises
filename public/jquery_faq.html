@@ -1,0 +1,48 @@
+<html>
+<head>
+	<title>Attribute Methods</title>
+</head>
+<body>
+	<style>
+		.invisible {
+			display: none;
+		}
+
+
+	</style>
+	<script src="/js/jquery.js"></script>
+	<script>
+		$('document').ready(function() {
+            $('#btn').click(function(event) {
+                event.preventDefault();
+                $('dd').toggleClass('invisible');
+            });
+        });
+	</script>
+
+	<a href="#" id="btn">Click to toggle National Park Faqs.</a>
+	<h1>National Park Faqs</h1>
+		<dl>
+			<dt>Redwood National Park</dt>
+				<dd class="invisible">Clean Air</dd>
+			<dt>Denali National Park</dt>
+				<dd class="invisible">Cold</dd>
+			<dt>Yosemite National Park</dt>
+				<dd class="invisible">Hiking</dd>
+			<dt>Sequoa National Park</dt>
+				<dd class="invisible">Wide Trees</dd>
+			<dt>Yellowstone National Park</dt>
+				<dd class="invisible">Falt</dd>
+			<dt>Adirondaks National Park</dt>
+				<dd class="invisible">Path Projects</dd>
+			<dt>Mount Desert National Park</dt>
+				<dd class="invisible">First Sunrise in the States</dd>
+			<dt>Big Bend National Park</dt>
+				<dd class="invisible">Camping</dd>
+			<dt>Davis Mountains National Park</dt>
+				<dd class="invisible">Indian Lodge</dd>
+			<dt>Pinnacles National Park</dt>
+				<dd class="invisible">California Condors</dd>
+		</dl>
+</body>
+</html>
