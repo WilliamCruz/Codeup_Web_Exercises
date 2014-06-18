@@ -22,26 +22,26 @@
 
     <script>
 
-        var headerChange = function (e) {
+        var headerChange = function () {
         // todo: get the main header element by id
-        var mainHeader = document.getElementById('main-header');
-        
-
+            var mainHeader = document.getElementById('main-header');
         // todo: set inner html of mainHeader to "JavaScript is Cool"
-        mainHeader.innerHTML='Javascript is Cool';
+            mainHeader.innerHTML='Javascript is Cool';
         };
+        document.getElementById('headerChange').addEventListener ('click', headerChange);
+
 
         // todo: get the sub header element by id
         // todo: set the text color of subHeader to blue
-        document.getElementById('headerChange').addEventListener ('click', headerChange);
-        function subHeaderChange() {
-        var subHeader = document.getElementById('sub-header');
-        subHeader.style['color'] = 'blue';
+        var subHeaderChange = function() {
+            var subHeader = document.getElementById('sub-header');
+            subHeader.style['color'] = 'blue';
         }
+        document.getElementById('subHeaderChange').addEventListener ('click', subHeaderChange);
+
             
-        // // todo: get all list items
-        // // todo: set text color on every other list item to grey
-        document.getElementById('listGrey').addEventListener ('click', listGrey);
+        // todo: get all list items
+        // todo: set text color on every other list item to grey
         function listGrey() { 
             var listItems = document.getElementsByTagName('li');
             for (var i = 0; i < listItems.length; i++) {
@@ -50,21 +50,22 @@
                 }
             }
         }
+        document.getElementById('listGrey').addEventListener ('click', listGrey);
       
         //  // todo: set text color of li with dbid = 1 to blue
         // // todo: get all list items
-        document.getElementById('listBlue').addEventListener ('click', listBlue);
         function listBlue() {
             var listItems = document.getElementsByTagName('li');
-            for (var dbid = 0; dbid < listItems.length; dbid++) {
-                var dbId = listItems[dbid].attributes['data-dbid'].value;
-                if (dbid == 1) {
-                listItems[dbid].style['color'] = "blue";
+            console.log('were here now first');
+            for (var i = 0; i < listItems.length; i++) {
                 console.log('were here now');
+                if (listItems[i].attributes['data-dbid'].value == 1) {
+                listItems[i].style['color'] = "blue";
 
                 }
             }
         }
+        document.getElementById('listBlue').addEventListener ('click', listBlue);
             //need to change to color blue//
 
 
