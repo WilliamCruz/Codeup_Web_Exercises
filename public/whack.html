@@ -1,0 +1,67 @@
+<html>
+<head>
+	<title>Whack-A-Mole</title>
+	<link rel="stylesheet" type="text/css" href="css/mole.css">
+</head>
+<body>
+
+        	
+        <h2>Mole Grid</h2>
+        <h2><span id='score'>Score:</span></2>
+        
+        <div id="gameboard">	
+			<div class="hole"><img class="mole" src="img/mole.jpg"></div>
+			<div class="hole"><img class="mole" src="img/mole.jpg"></div>
+			<div class="hole"><img class="mole" src="img/mole.jpg"></div>
+			<div class="hole"><img class="mole" src="img/mole.jpg"></div>
+			<div class="hole"><img class="mole" src="img/mole.jpg"></div>
+			<div class="hole"><img class="mole" src="img/mole.jpg"></div>
+			<div class="hole"><img class="mole" src="img/mole.jpg"></div>
+			<div class="hole"><img class="mole" src="img/mole.jpg"></div>
+			<div class="hole"><img class="mole" src="img/mole.jpg"></div>
+		</div>
+
+
+        
+	
+	
+
+	<script src="/js/jquery.js"></script>
+
+	<script>
+        function getRandomInt(min, max) {
+  			return Math.floor(Math.random() * (max - min + 1)) + min;
+		};
+
+		var moles = $('.mole');
+		var random;
+		var score = 0;
+		// begin set interval here
+		// call random number function
+		// end set interval here
+		// console.log(random);
+		setInterval(function () {
+			random = getRandomInt(0, 8);
+			// console.log(holes[random]);
+			$(moles[random]).fadeIn(700).delay(150).fadeOut(200);
+
+		}, 1000);
+        // $('.mole').fadeIn(1000);
+       
+        $('.mole').click(function () {
+        	$('#score').html('Score: ' + ++score);
+        	$(this).hide();
+        
+        	//connect successful clicks to score.
+
+        	console.log('hey this is clicked');
+        });
+
+        //add timer with alert feature 
+        //create first five high score
+        //maybe incude bonus
+        //maybe include sound effectsc
+	</script>
+
+</body>
+</html>
