@@ -1,0 +1,59 @@
+<html>
+<head>
+    <title>Exampe jQuery Page</title>
+    <style>
+        .important {
+            text-align: center;
+        }
+    </style>
+    <script src="/js/jquery.js"></script>
+    <script>
+        $('document').ready(function() {
+            $('.important').css('background-color', '#FF0');
+        });
+    </script>
+</head>
+<body>
+    <h1>Click Exercise</h1>
+    <p>This is a click test to make all font size in this paragraph to change.</p>
+    <p>This is a click test to make all font size in this paragraph to change.</p>
+    <p>This is a click test to make all font size in this paragraph to change.</p>
+    <p>This is a click test to make all font size in this paragraph to change.</p>
+    <p>This is a click test to make all font size in this paragraph to change.</p>
+    <ul id="numberList">
+    	<li>1</li>
+    	<li>2</li>
+    	<li>3</li>
+    	<li>4</li>
+    	<li>5</li>
+    </ul>
+
+  
+
+<!--	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script> -->
+
+	<script>
+		$('h1').click(function() {
+			$(this).css('background-color', 'blue');
+		});
+
+		$('p').dblclick(function() {
+			$(this).css('font-size', '18px');
+		})
+// <!--	Set all li text color to red when the mouse is hovering, reset to white when it is not.-->
+		$('li').hover(function() {
+			$(this).css('color', 'red');
+		})
+			
+	</script>
+	
+
+
+
+    
+</body>
+</html>
+
+
+
+	
