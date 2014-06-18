@@ -7,9 +7,8 @@
 		.invisible {
 			display: none;
 		}
-
-
 	</style>
+
 	<script src="/js/jquery.js"></script>
 	<script>
 		$('document').ready(function() {
@@ -17,18 +16,19 @@
                 event.preventDefault();
                 
                 $('#btn').click(function () {
-                	$('dd').toggle("slow");
+                	$('dd').fadeIn();
+                });
+                $('#btn').click(function () {
+                	$('dd').fadeOut();
                 });
             });
 			 
+			//make first item in list bold
 			$('ul').each(function() {
 				$(this).children().first().css('font-weight', 'bold');
-
-
-			})
-			
-			// .children().first().css('font-wight' 'bold');
-		 		$('li').click(function() {
+			});
+			//click list item to make invisible
+		 	$('li').click(function() {
 		 			$(this).hide();
 		 	});
         });
