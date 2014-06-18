@@ -15,47 +15,78 @@
     <h2 id="sub-header">Hello Again.</h2>
     <p class="sub-paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
+    <button id="headerChange">Header</button>
+    <button id="subHeaderChange">Sub</button>
+    <button id="listBlue">Blue</button>
+    <button id="listGrey">Grey</button>
+
     <script>
 
+        var headerChange = function (e) {
         // todo: get the main header element by id
         var mainHeader = document.getElementById('main-header');
-        console.log(typeof mainHeader);
+        
 
         // todo: set inner html of mainHeader to "JavaScript is Cool"
         mainHeader.innerHTML='Javascript is Cool';
+        };
 
         // todo: get the sub header element by id
-        var subHeader = document.getElementById('sub-header');
-        console.log(typeof subHeader);
-
         // todo: set the text color of subHeader to blue
+        document.getElementById('headerChange').addEventListener ('click', headerChange);
+        function subHeaderChange() {
+        var subHeader = document.getElementById('sub-header');
         subHeader.style['color'] = 'blue';
-
-        // todo: get all list items
-        var listItems = document.getElementsByTagName('li');
-
-        // todo: set text color on every other list item to grey
-        for (var i = 0; i < listItems.length; i++) {
-            if (i % 2 == 0) {
-                listItems[i].style['color'] = "grey";
+        }
             
-            var dbId = listItems[i].attributes['data-dbid'].value;
-            if (dbId == "1") {
-                listItems[i].style['color'] = "blue";
+        // // todo: get all list items
+        // // todo: set text color on every other list item to grey
+        document.getElementById('listGrey').addEventListener ('click', listGrey);
+        function listGrey() { 
+            var listItems = document.getElementsByTagName('li');
+            for (var i = 0; i < listItems.length; i++) {
+                if (i % 2 == 0) {
+                listItems[i].style['color'] = "grey";
+                }
+            }
+        }
+      
+        //  // todo: set text color of li with dbid = 1 to blue
+        // // todo: get all list items
+        document.getElementById('listBlue').addEventListener ('click', listBlue);
+        function listBlue() {
+            var listItems = document.getElementsByTagName('li');
+            for (var dbid = 0; dbid < listItems.length; dbid++) {
+                var dbId = listItems[dbid].attributes['data-dbid'].value;
+                if (dbid == 1) {
+                listItems[dbid].style['color'] = "blue";
+                console.log('were here now');
 
                 }
             }
         }
+            //need to change to color blue//
 
-        
-        // todo: set text color of li with dbid = 1 to blue
 
-        // todo: get all elements with class name sub-paragraph
-        var subParagraphs = document.getElementsByClassName('sub-paragraph');
-        console.log(subParagraph);
-        // todo: change the text in the first sub paragraph to "Mission Accomplished!"
-        subParagraph[0].innHTML="Misison Accomplished";
+
+
+
+
+        // // todo: get all elements with class name sub-paragraph
+        // var subParagraphs = document.getElementsByClassName('sub-paragraph');
+        // console.log(subParagraph);
+        // // todo: change the text in the first sub paragraph to "Mission Accomplished!"
+        // subParagraph[0].innHTML="Misison Accomplished";
     </script>
 
 </body>
 </html>
+                
+            
+            
+
+
+
+        
+       
+                
