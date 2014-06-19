@@ -2,7 +2,7 @@
 //William Cruz
 //6-18-14
 //Classes and Objects II
-//used in todo_filestore and addressDataStore
+//used in todoFilestore and addressDataStore
 
 class Filestore {
 
@@ -13,13 +13,14 @@ class Filestore {
         // Sets $this->filename
         $this->filename = $filename;
     }
+
 	 /**
      * Returns array of lines in $this->filename
      */
     function read_lines()
     {
-    	$filesize = filesize($filename);
-	    $handle = fopen($filename, "r");
+    	$filesize = filesize($this->filename);
+	    $handle = fopen($this->filename, "r");
 	    $list_string = trim(fread($handle, $filesize));
 	    $list_array = explode("\n", $list_string);
 	    fclose($handle);
@@ -32,7 +33,7 @@ class Filestore {
     function write_lines($array)
     {
     	$list_string = implode("\n", $list);
-    	$handle = fopen($filename, 'w');
+    	$handle = fopen($this->filename, 'w');
 		fwrite($handle, $list_string);
 		fclose($handle);
     }
@@ -62,15 +63,15 @@ class Filestore {
     {
     	if (is_writable($this->filename)) {
 			$handle = fopen($this->filename, 'w');
-			foreach($book as $newData) {
+			foreach($array as $newData) {
 				fputcsv($handle, $newData);
 			}
-			fclose($handle);
 		}
+		fclose($handle);
 	}
 
-
-
+}
+?>
 
 
 
