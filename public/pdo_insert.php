@@ -16,7 +16,7 @@ $query = 'CREATE TABLE National_Parks (
     name VARCHAR(50) NOT NULL,
     location VARCHAR(240) NOT NULL,
     date_established DATE,
-    area DECIMAL(6,2),
+    area DECIMAL,
     PRIMARY KEY (id)
 )';
 
@@ -24,17 +24,16 @@ $query = 'CREATE TABLE National_Parks (
 
 
 $National_Parks =[
-		['name' => 'Acadia', 'location' => 'Maine', 'date_established' => 'Frebruary 26, 1919', 'area' => '47389.67'],
-		['name' => 'American Sanoma', 'location' => 'American Sanoma', 'date_established' => 'October 31, 1988', 'area' => '9000.00'],
-		['name'	=> 'Arches', 'location' => 'Utah', 'date_established' => 'November 12, 1971', 'area' => '76518.98'],
-		['name'	=> 'Badlands', 'location' => 'South Dakota', 'date_established' => 'November 10, 1978', 'area' => '242755.94'],
-		['name'	=> 'Big Bend', 'location' => 'Texas', 'date_established' => 'June 12, 1944', 'area' => '801163.21'],
-		['name'	=> 'Biscayne', 'location' => 'Florida', 'date_established' => 'June 28, 1980', 'area' => '172924.07'],
-		['name'	=> 'Black Canyon of the Gunnison', 'location' => 'Colorado', 'date_established' => 'October 21, 1999', 'area' => '32950.03'],
-		['name'	=> 'Bryce Canyon', 'location' => 'Utah', 'date_established' => 'February 25, 1928', 'area' => '35835.08'],
-		['name'	=> 'Canyonlands', 'location' => 'Utah', 'date_established' => 'September 12, 1964', 'area' => '337597.83'],
-		['name'	=> 'Capitol Reef', 'location' => 'Utah', 'date_established' => 'December 18, 1971', 'area' => '241904.26'],
-		['name'	=> 'Carlsbad Caverns', 'location' => 'New Mexico', 'date_established' => 'May 14, 1930', 'area' => '46766.45'],
+		['name' => 'Acadia', 'location' => 'Maine', 'date_established' => '1919-02-26', 'area' => '47389.67'],
+		['name' => 'American Sanoma', 'location' => 'American Sanoma', 'date_established' => '1988-10-31', 'area' => '9000.00'],
+		['name'	=> 'Arches', 'location' => 'Utah', 'date_established' => '1971-11-12', 'area' => '76518.98'],
+		['name'	=> 'Badlands', 'location' => 'South Dakota', 'date_established' => '1978-11-10', 'area' => '242755.94'],
+		['name'	=> 'Big Bend', 'location' => 'Texas', 'date_established' => '1944-06-12', 'area' => '801163.21'],
+		['name'	=> 'Biscayne', 'location' => 'Florida', 'date_established' => '1980-06-28', 'area' => '172924.07'],
+		['name'	=> 'Black Canyon of the Gunnison', 'location' => 'Colorado', 'date_established' => '1999-10-21', 'area' => '32950.03'],
+		['name'	=> 'Bryce Canyon', 'location' => 'Utah', 'date_established' => '1928-02-25', 'area' => '35835.08'],
+		['name'	=> 'Canyonlands', 'location' => 'Utah', 'date_established' => '1964-09-12', 'area' => '337597.83'],
+		['name'	=> 'Capitol Reef', 'location' => 'Utah', 'date_established' => '1971-12-18', 'area' => '241904.26'],
 ];
 
 foreach ($National_Parks as $national_park) {
