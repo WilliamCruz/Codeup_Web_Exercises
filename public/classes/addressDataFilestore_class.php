@@ -13,11 +13,7 @@ require_once('classes/fileStore.php');
 
 class AddressDataStore extends Filestore {
 
-	public $filename = '';
-	public function __construct($filename)
-	{
-		$this->filename = $filename;
-	}
+
 
 	public function readAddressBook()
 	{
