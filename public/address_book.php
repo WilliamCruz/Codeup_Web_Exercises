@@ -111,9 +111,9 @@ if (count($_FILES) > 0 && $_FILES['file1']['error'] == 0) {
         move_uploaded_file($_FILES['file1']['tmp_name'], $saved_filename);
 
         // load the new csv
-        // merge with existing table
         $ups = new AddressDataStore($saved_filename);
         $address_uploaded = $ads->readAddressBook();
+        // merge with existing table
         $addressBook = array_merge($addressBook, $address_uploaded);
         $ads->writeAddressBook($addressBook);
     }
@@ -161,59 +161,44 @@ if (count($_FILES) > 0 && $_FILES['file1']['error'] == 0) {
 		}
 		?>
 
-		<form method="POST">
-			<p>
-				<label for="Name">Name:</lable>
-				<input id="Name" name="name" type="text" placeholder="Enter Name">
-			</p>
-			<p>
-				<label for="Address">Address:</lable>
-				<input id="Address" name="address" type="text" placeholder="Enter Address">
-			</p>
-			<p>
-				<lable for="City">City:</lable>
-				<input id="City" name="city" type="text" placeholder="Enter City">
-			</p>
-			<p>
-				<label for="State">State:</label>
-				<input id="State" name="state" type="text" placeholder="Enter State">
-			</p>
-			<p>
-				<label for="Zip">Zip:</lable>
-				<input id="Zip" name="zip" type="text" placeholder="Enter Zip">
-			</p>
-			<p>
-				<label for="Phone">Phone:</label>
-				<input id="Phone" name="phone" type="text" placeholder="Optional">
-			</p>
-			<p>	
-				<button type="Submit">Enter</button>
-			</p>
-		</form>
-		<h1>Upload CSV File</h1>
-		<form method="POST" enctype="multipart/form-data" action='address_book.php'>
-			<p>
-				<label for="file1">Upload CSV File:</label> 
-				<input id="file1" name="file1" type="file"> 
-			</p>
-			<p>
-				<button type="Upload File Here">Upload</button> 
+	<form method="POST">
+		<p>
+			<label for="Name">Name:</lable>
+			<input id="Name" name="name" type="text" placeholder="Enter Name">
+		</p>
+		<p>
+			<label for="Address">Address:</lable>
+			<input id="Address" name="address" type="text" placeholder="Enter Address">
+		</p>
+		<p>
+			<lable for="City">City:</lable>
+			<input id="City" name="city" type="text" placeholder="Enter City">
+		</p>
+		<p>
+			<label for="State">State:</label>
+			<input id="State" name="state" type="text" placeholder="Enter State">
+		</p>
+		<p>
+			<label for="Zip">Zip:</lable>
+			<input id="Zip" name="zip" type="text" placeholder="Enter Zip">
+		</p>
+		<p>
+			<label for="Phone">Phone:</label>
+			<input id="Phone" name="phone" type="text" placeholder="Optional">
+		</p>
+		<p>	
+			<button type="Submit">Enter</button>
+		</p>
+	</form>
+	<h1>Upload CSV File</h1>
+	<form method="POST" enctype="multipart/form-data" action='address_book.php'>
+		<p>
+			<label for="file1">Upload CSV File:</label> 
+			<input id="file1" name="file1" type="file"> 
+		</p>
+			<button type="Upload File Here">Upload</button> 
 
-		</form>
+	</form>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-	
-
-
-
-		
