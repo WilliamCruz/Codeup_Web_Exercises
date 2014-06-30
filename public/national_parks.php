@@ -31,9 +31,6 @@ $count = $dbc->query('SELECT count(*) FROM National_Parks')->fetchColumn();
 $numPages = ceil($count / 4);
 
 
-
-
-
 if (!empty($_POST)) {
 	$stmt = $dbc->prepare("INSERT INTO National_Parks (name, location, date_established, area, description) 
    	 VALUES (:name, :location, :date_established, :area, :description)");
@@ -108,8 +105,4 @@ if (!empty($_POST)) {
 
 </body>
 <html>
-
-
-
-
-			
+		
