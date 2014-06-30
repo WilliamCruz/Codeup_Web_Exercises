@@ -4,7 +4,6 @@
     <title>DOM: Query and Modify</title>
 </head>
 <body>
-
     <h1 id="main-header">Hello World!</h1>
     <ul>
         <li data-dbid="1">Item 1</li>
@@ -22,23 +21,20 @@
     <button id="listGrey">Grey</button>
 
     <script>
-
         var headerChange = function () {
-        // todo: get the main header element by id
             var mainHeader = document.getElementById('main-header');
-        // todo: set inner html of mainHeader to "JavaScript is Cool"
             mainHeader.innerHTML='Javascript is Cool';
         };
         document.getElementById('headerChange').addEventListener ('click', headerChange);
 
-        //get the sub header element by id and set the text color of subHeader to blue
+        
         var subHeaderChange = function() {
             var subHeader = document.getElementById('sub-header');
             subHeader.style['color'] = 'blue';
         }
         document.getElementById('subHeaderChange').addEventListener ('click', subHeaderChange);
 
-        //set text color on every other list item to grey and get all list items
+        
         function listGrey() { 
             var listItems = document.getElementsByTagName('li');
             for (var i = 0; i < listItems.length; i++) {
@@ -47,9 +43,10 @@
                 }
             }
         }
+
         document.getElementById('listGrey').addEventListener ('click', listGrey);
       
-        //set text color of li with dbid = 1 to blue and get all list items
+        
         function listBlue() {
             var listItems = document.getElementsByTagName('li');
             for (var i = 0; i < listItems.length; i++) {
@@ -59,17 +56,15 @@
                 }
             }
         }
-        //change to color blue//
         document.getElementById('listBlue').addEventListener ('click', listBlue);
  
+
         var subParagraph = function () {
             var subParagraph2 = document.getElementById('sub-paragraph');
-        // todo: set inner html of mainHeader to "JavaScript is Cool"
             subParagraph2.innerHTML = 'Misison Accomplished';
         }
         document.getElementById('sub-paragraph').addEventListener('click', subParagraph);
     </script>
-
 </body>
 </html>
                 
