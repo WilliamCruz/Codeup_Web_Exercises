@@ -10,67 +10,51 @@ class Filestore {
 
     function __construct($filename = '') 
     {
-        // Sets $this->filename
         $this->filename = $filename;
     }
-	 /**
-     * Returns array of lines in $this->filename
-     */
+     
     function read_lines()
     {
-    	$filesize = filesize($filename);
-	    $handle = fopen($filename, "r");
-	    $list_string = trim(fread($handle, $filesize));
-	    $list_array = explode("\n", $list_string);
-	    fclose($handle);
-		return $list_array;	
+        $filesize = filesize($filename);
+        $handle = fopen($filename, "r");
+        $list_string = trim(fread($handle, $filesize));
+        $list_array = explode("\n", $list_string);
+        fclose($handle);
+        return $list_array; 
     }
 
-    /**
-     * Writes each element in $array to a new line in $this->filename
-     */
     function write_lines($array)
     {
-    	$list_string = implode("\n", $list);
-    	$handle = fopen($filename, 'w');
-		fwrite($handle, $list_string);
-		fclose($handle);
+        $list_string = implode("\n", $list);
+        $handle = fopen($filename, 'w');
+        fwrite($handle, $list_string);
+        fclose($handle);
     }
 
-    /**
-     * Reads contents of csv $this->filename, returns an array
-     */
     function read_csv()
     {
-    	$book = [];
-
-		$handle = fopen($this->filename, 'r');
-		while(!feof($handle)) {
-			$row = fgetcsv($handle);
-			if (is_array($row)) {
-		  		$book[] = $row;
-			}
-		}
-		fclose($handle);
-		return $book;
+        $book = [];
+        $handle = fopen($this->filename, 'r');
+        while(!feof($handle)) {
+            $row = fgetcsv($handle);
+            if (is_array($row)) {
+                $book[] = $row;
+            }
+        }
+        fclose($handle);
+        return $book;
     }
 
-    /**
-     * Writes contents of $array to csv $this->filename
-     */
     function write_csv($array)
     {
-    	if (is_writable($this->filename)) {
-			$handle = fopen($this->filename, 'w');
-			foreach($book as $newData) {
-				fputcsv($handle, $newData);
-			}
-			fclose($handle);
-		}
-	}
+        if (is_writable($this->filename)) {
+            $handle = fopen($this->filename, 'w');
+            foreach($book as $newData) {
+                fputcsv($handle, $newData);
+            }
+            fclose($handle);
+        }
+    }
+}
 
-
-
-
-
-
+?>
