@@ -1,17 +1,10 @@
+<!DOCTYPE>
 <html>
 <head>
     <title>File Upload</title>
 </head>
 <body>
-
-<?php
-
-var_dump($_FILES);
-
-?>
-
 <h1>Upload File</h1>
-
 <form method="POST" enctype="multipart/form-data" action="/file-upload.php">
     <p>
         <label for="file1">File to upload: </label>
@@ -21,6 +14,5 @@ var_dump($_FILES);
         <input type="submit" value="Upload">
     </p>
 </form>
-
 </body>
 </html>
