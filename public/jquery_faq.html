@@ -1,90 +1,90 @@
+<!DOCTYPE>
 <html>
 <head>
-	<title>Attribute Methods</title>
+    <title>Attribute Methods</title>
 </head>
 <body>
-	<style>
-		.invisible {
-			display: none;
-		}
-	</style>
+    <style>
+        .invisible {
+            display: none;
+        }
+    </style>
 
-	<script src="/js/jquery.js"></script>
-	<script>
-		$('document').ready(function() {
+    <script src="/js/jquery.js"></script>
+    <script>
+        $('document').ready(function() {
             $('#btn').click(function(event) {
                 event.preventDefault();
                 
                 $('#btn').click(function () {
-                	$('dd').fadeIn();
+                    $('dd').fadeIn();
                 });
                 $('#btn').click(function () {
-                	$('dd').fadeOut();
+                    $('dd').fadeOut();
                 });
             });
-			 
-			//make first item in list bold
-			$('ul').each(function() {
-				$(this).children().first().css('font-weight', 'bold');
-			});
-			//click list item to make invisible
-		 	$('li').click(function() {
-		 			$(this).hide();
-		 	});
+             
+            //make first item in list bold
+            $('ul').each(function() {
+                $(this).children().first().css('font-weight', 'bold');
+            });
+            //click list item to make invisible
+            $('li').click(function() {
+                    $(this).hide();
+            });
         });
-	</script>
+    </script>
 
-	<a href="#" id="btn">Click to toggle National Park Faqs.</a>
-	<h1>National Park Faqs</h1>
-		<dl>
-			<dt>Redwood National Park</dt>
-				<dd class="invisible">Clean Air</dd>
-			<dt>Denali National Park</dt>
-				<dd class="invisible">Cold</dd>
-			<dt>Yosemite National Park</dt>
-				<dd class="invisible">Hiking</dd>
-			<dt>Sequoa National Park</dt>
-				<dd class="invisible">Wide Trees</dd>
-			<dt>Yellowstone National Park</dt>
-				<dd class="invisible">Falt</dd>
-			<dt>Adirondaks National Park</dt>
-				<dd class="invisible">Path Projects</dd>
-			<dt>Mount Desert National Park</dt>
-				<dd class="invisible">First Sunrise in the States</dd>
-			<dt>Big Bend National Park</dt>
-				<dd class="invisible">Camping</dd>
-			<dt>Davis Mountains National Park</dt>
-				<dd class="invisible">Indian Lodge</dd>
-			<dt>Pinnacles National Park</dt>
-				<dd class="invisible">California Condors</dd>
-		</dl>
+    <a href="#" id="btn">Click to toggle National Park Faqs.</a>
+    <h1>National Park Faqs</h1>
+        <dl>
+            <dt>Redwood National Park</dt>
+                <dd class="invisible">Clean Air</dd>
+            <dt>Denali National Park</dt>
+                <dd class="invisible">Cold</dd>
+            <dt>Yosemite National Park</dt>
+                <dd class="invisible">Hiking</dd>
+            <dt>Sequoa National Park</dt>
+                <dd class="invisible">Wide Trees</dd>
+            <dt>Yellowstone National Park</dt>
+                <dd class="invisible">Falt</dd>
+            <dt>Adirondaks National Park</dt>
+                <dd class="invisible">Path Projects</dd>
+            <dt>Mount Desert National Park</dt>
+                <dd class="invisible">First Sunrise in the States</dd>
+            <dt>Big Bend National Park</dt>
+                <dd class="invisible">Camping</dd>
+            <dt>Davis Mountains National Park</dt>
+                <dd class="invisible">Indian Lodge</dd>
+            <dt>Pinnacles National Park</dt>
+                <dd class="invisible">California Condors</dd>
+        </dl>
 
-	<a href="#" id="Parks">Click facts to make them invisible.</a>
-	<h3>Arches</h3>
-		<ul>
-			<li>Arches has a landscape of contrasting colors, landforms and textures unlike any other in the world. </li>
-			<li>The park has over 2,000 natural stone arches.</li>
-			<li>In addition to hundreds of soaring pinnacles,</li>
-			<li>massive fins and giant balanced rocks.</li>
-		</ul>
-	<h3>Badlands</h3>
-		<ul>
-			<li>These striking geologic deposits contain one of the world’s richest fossil beds.</li>
-			<li>Ancient mammals such as the rhino, horse, and saber-toothed cat once roamed here.</li>
-			<li>The park’s 244,000 acres protect an expanse of mixed-grass prairie where bison, bighorn sheep, prairie dogs, and black-footed ferrets live today.</li>
-			<li>Lovely dark night skies are a Badlands highlight.</li>
-		</ul>
-	<h3>Carlsbad Caverns</h3>
-		<ul>
-			<li>An experience that is high energy, educational, fun and family oriented.</li>
-			<li>Simply experience nature on the original Discovery Tour.</li>
-			<li>One of the states top attractions in Texas.</li>
-			<li>The cavern formed by an underground "river" moving slowly through cracks and pores within the limestone.</li>
-		</ul>
+    <a href="#" id="Parks">Click facts to make them invisible.</a>
+    <h3>Arches</h3>
+        <ul>
+            <li>Arches has a landscape of contrasting colors, landforms and textures unlike any other in the world. </li>
+            <li>The park has over 2,000 natural stone arches.</li>
+            <li>In addition to hundreds of soaring pinnacles,</li>
+            <li>massive fins and giant balanced rocks.</li>
+        </ul>
+    <h3>Badlands</h3>
+        <ul>
+            <li>These striking geologic deposits contain one of the world’s richest fossil beds.</li>
+            <li>Ancient mammals such as the rhino, horse, and saber-toothed cat once roamed here.</li>
+            <li>The park’s 244,000 acres protect an expanse of mixed-grass prairie where bison, bighorn sheep, prairie dogs, and black-footed ferrets live today.</li>
+            <li>Lovely dark night skies are a Badlands highlight.</li>
+        </ul>
+    <h3>Carlsbad Caverns</h3>
+        <ul>
+            <li>An experience that is high energy, educational, fun and family oriented.</li>
+            <li>Simply experience nature on the original Discovery Tour.</li>
+            <li>One of the states top attractions in Texas.</li>
+            <li>The cavern formed by an underground "river" moving slowly through cracks and pores within the limestone.</li>
+        </ul>
 
-		<!-- Create jQuery code that adds the invisible class on the parent ul of any li that is clicked. -->
+        <!-- Create jQuery code that adds the invisible class on the parent ul of any li that is clicked. -->
  
 </body>
 </html>
-		
-
+        
