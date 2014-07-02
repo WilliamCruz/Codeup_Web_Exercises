@@ -1,24 +1,23 @@
 <!DOCTYPE>
 <html>
-	<head>
-		<title>Splitting and Joining Arrays</title>
-	</head>
-		<body>
-			<h1>Splitting and Joining Arrays Exercise</h1>
+    <head>
+        <title>Splitting and Joining Arrays</title>
+    </head>
+    <body>
+        <h1>Splitting and Joining Arrays Exercise</h1>
 
-			<script>
+        <script>
 
-				var planets = ['Murcury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn','Uranus', 'Neptune'];
+            var planets = ['Murcury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn','Uranus', 'Neptune'];
 
-				var planetsAsString = planets.join(' | ');
-				console.log(planetsAsString);
+            // Split the 'planetsAsString' variable by pipes (|) to create a variable named 'planetsAsArray'.
+            var planetsAsString = planets.join(' | ');
+            console.log(planetsAsString);
+            // console.log(planetsAsArray);
 
-			
-				var planetsAsArray = planetsAsString.split('|');
-				console.log(planetsAsArray);
-// todo: Split the 'planetsAsString' variable by pipes (|) to create a variable named 'planetsAsArray'.
-// console.log(planetsAsArray);
+            var planetsAsArray = planetsAsString.split('|');
+            console.log(planetsAsArray);
 
-			</script>
-		</body>
+        </script>
+</body>
 </html>
