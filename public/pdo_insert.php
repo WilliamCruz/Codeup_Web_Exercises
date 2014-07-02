@@ -8,21 +8,19 @@ $dbc = new PDO('mysql:host=127.0.0.1;dbname=codeup_test_db', 'william', 'vitzma_
 // Tell PDO to throw exceptions on error
 $dbc->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
+Create the query and assign to var, create table
+$query = 'CREATE TABLE National_Parks (
+    id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    name VARCHAR(50) NOT NULL,
+    location VARCHAR(240) NOT NULL,
+    date_established DATE,
+    area FLOAT(2),
+    description TEXT,
+    PRIMARY KEY (id)
+)';
 
-
-// Create the query and assign to var, create table
-// $query = 'CREATE TABLE National_Parks (
-//     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
-//     name VARCHAR(50) NOT NULL,
-//     location VARCHAR(240) NOT NULL,
-//     date_established DATE,
-//     area FLOAT(2),
-//     description TEXT,
-//     PRIMARY KEY (id)
-// )';
-
-// // Run query, if there are errors they will be thrown as PDOExceptions
-// $dbc->exec($query);
+// Run query, if there are errors they will be thrown as PDOExceptions
+$dbc->exec($query);
 
 
 $National_Parks =[
@@ -50,7 +48,4 @@ foreach ($National_Parks as $national_park) {
     $stmt->execute();
 }
 
-
-
-
-
+?>
